@@ -198,30 +198,23 @@ export default {
         </div>
 
         <div v-show="activeTab === 3">
-          <div class="mx-auto max-w-screen-2xl px-4">
-  <div class="grid grid-cols-1 gap-y-6 pb-32 justify-items-center 
-              sm:grid-cols-2 sm:gap-x-8 sm:gap-y-8 
-              md:grid-cols-3 md:gap-x-14 md:gap-y-10 
-              xl:grid-cols-4 xl:gap-x-20 xl:gap-y-14 
-              2xl:gap-x-28 2xl:gap-y-16">
-              
-    <div v-for="item in education" :key="item.id">
-      <div class="item-tech flex cursor-pointer items-center gap-4 rounded border border-amber-200 px-5 py-4 hover:bg-amber-200 hover:bg-opacity-10 shadow-md transition-all duration-300">
-        <div class="flex h-16 w-16 items-center justify-center lg:h-20 lg:w-20">
-          <img :src="item.imageUrl" class="img-tech drop-shadow-xl transition-all duration-300 h-[80%] w-[80%]" />
+          <div class="grid grid-cols-1 gap-6 pb-32 justify-items-center sm:grid-cols-2 md:grid-cols-3 md:gap-10 xl:grid-cols-4 xl:gap-x-20 xl:gap-y-10 2xl:gap-x-20">
+            <div v-for="item in education" :key="item.id">
+              <div class="item-tech flex cursor-pointer items-center gap-2 rounded border border-amber-200 px-2 py-2 hover:bg-amber-200 hover:bg-opacity-10 md:gap-3 lg:px-3 min-w-[220px] md:min-w-[260px] xl:min-w-[300px]">
+                <div class="flex h-12 w-12 items-center justify-center p-0 lg:h-16 lg:w-16 lg:p-2 zoom-in">
+                  <img :src="item.imageUrl" class="img-tech drop-shadow-xl transition-all duration-300 h-[65%] w-[65%] lg:h-[85%] lg:w-[85%]" />
+                </div>
+                <div class="flex items-center text-sm md:text-base lg:text-lg">
+                  <div class="tech font-medium text-secondary transition-all duration-300 translate-y-0 ">{{ item.name }}</div>
+                  <div class="status-tech opacity-0 absolute mt-5 text-[10px] text-amber-200 transition-all duration-300 md:text-xs lg:text-sm">{{ item.status }}</div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
-        <div class="flex flex-col text-sm md:text-base lg:text-lg">
-          <div class="tech font-medium text-secondary">{{ item.name }}</div>
-          <div class="status-tech text-amber-200 text-xs md:text-sm">{{ item.status }}</div>
-        </div>
-      </div>
-    </div>
-
-  </div>
-</div>
 
         <div v-show="activeTab === 4">
-          <div class="grid grid-cols-2 gap-4 pb-32 md:grid-cols-3 md:gap-8 xl:grid-cols-4 xl:gap-10 2xl:gap-12">
+          <div class="grid grid-cols-1 gap-6 pb-32 justify-items-center sm:grid-cols-2 md:grid-cols-3 md:gap-10 xl:grid-cols-4 xl:gap-x-16 xl:gap-y-10 2xl:gap-x-20">
             <div v-for="item in interests" :key="item.id">
               <div class="item-tech flex cursor-pointer items-center gap-2 rounded border border-amber-200 px-2 py-2 hover:bg-amber-200 hover:bg-opacity-10 md:gap-3 lg:px-3">
                 <div class="flex h-12 w-12 items-center justify-center p-0 lg:h-16 lg:w-16 lg:p-2 zoom-in">
