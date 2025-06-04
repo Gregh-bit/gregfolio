@@ -98,7 +98,7 @@ export default {
           id: 1,
           name: 'Film e Musica',
           imageUrl: 'https://cdn-icons-png.flaticon.com/512/727/727245.png',
-          status: 'Cinema e Videomaking'
+          status: 'Cinema, Videomaking'
         },
         {
           id: 2,
@@ -110,7 +110,7 @@ export default {
           id: 3,
           name: 'Creatività',
           imageUrl: 'https://cdn-icons-png.freepik.com/256/15557/15557915.png',
-          status: 'Scrittura, contenuti multimediali'
+          status: 'Contenuti multimediali'
         }
       ]
     };
@@ -201,7 +201,7 @@ export default {
           <div class="grid grid-cols-2 gap-4 pb-32 md:grid-cols-3 md:gap-8 xl:grid-cols-4 xl:gap-10 2xl:gap-12">
             <div v-for="item in education" :key="item.id">
               <div class="item-tech flex cursor-pointer items-center gap-2 rounded border border-amber-200 px-2 py-2 hover:bg-amber-200 hover:bg-opacity-10 md:gap-3 lg:px-3">
-                <div class="flex h-12 w-12 items-center justify-center p-0 lg:h-16 lg:w-16 lg:p-2 zoom-in">
+                <div class="flex h-20 w-20 items-center justify-center p-1 lg:h-28 lg:w-28 lg:p-3 zoom-in">
                   <img :src="item.imageUrl" class="img-tech drop-shadow-xl transition-all duration-300 h-[65%] w-[65%] lg:h-[85%] lg:w-[85%]" />
                 </div>
                 <div class="flex items-center text-sm md:text-base lg:text-lg">
