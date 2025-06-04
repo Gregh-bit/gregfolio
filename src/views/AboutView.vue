@@ -51,7 +51,7 @@ export default {
         {
           id: 2,
           name: 'Canva',
-          imageUrl: 'https://cdn-icons-png.flaticon.com/512/888/888853.png',
+          imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/0/08/Canva_icon_2021.svg',
           status: 'Design grafico'
         },
         {
@@ -63,13 +63,13 @@ export default {
         {
           id: 4,
           name: 'DaVinci Resolve',
-          imageUrl: 'https://cdn-icons-png.flaticon.com/512/5968/5968523.png',
+          imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/2/2f/DaVinci_Resolve_17_logo.svg',
           status: 'Montaggio video'
         },
         {
           id: 5,
           name: 'Microsoft Office',
-          imageUrl: 'https://cdn-icons-png.flaticon.com/512/732/732223.png',
+          imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/4/4e/Microsoft_Office_Logo_%282019%E2%80%93present%29.svg',
           status: 'Suite produttività'
         }
       ],
@@ -77,13 +77,13 @@ export default {
         {
           id: 1,
           name: 'Diploma Scientifico',
-          imageUrl: 'https://cdn-icons-png.flaticon.com/512/4466/4466436.png',
+          imageUrl: 'https://cdn-icons-png.flaticon.com/512/3135/3135768.png',
           status: 'Liceo Galilei, Lamezia Terme (2019 – 2024)'
         },
         {
           id: 2,
           name: 'Laurea in Informatica',
-          imageUrl: 'https://cdn-icons-png.flaticon.com/512/8824/8824175.png',
+          imageUrl: 'https://cdn-icons-png.flaticon.com/512/2991/2991148.png',
           status: 'UNICAL (2024 – in corso)'
         }
       ],
@@ -97,13 +97,13 @@ export default {
         {
           id: 2,
           name: 'Tecnologia',
-          imageUrl: 'https://cdn-icons-png.flaticon.com/512/6985/6985378.png',
-          status: 'Hardware e software'
+          imageUrl: 'https://cdn-icons-png.flaticon.com/512/1048/1048953.png',
+          status: 'Hardware, software, innovazione digitale'
         },
         {
           id: 3,
           name: 'Creatività',
-          imageUrl: 'https://cdn-icons-png.freepik.com/256/15557/15557915.png',
+          imageUrl: 'https://cdn-icons-png.flaticon.com/512/1828/1828884.png',
           status: 'Scrittura, comunicazione, contenuti multimediali'
         }
       ]
@@ -253,49 +253,17 @@ export default {
   animation-delay: 800ms;
 }
 
-.item-tech {
-  transition: transform 0.3s ease, height 0.3s ease, background-color 0.3s ease;
-  overflow: hidden;
-  height: 160px; /* altezza normale */
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
-
-.item-tech:hover {
-  height: 220px; /* si espande */
-}
-
-.img-tech {
+.img-tech,
+.tech {
   transition: transform 0.3s ease;
-  width: 64px;
-  height: 64px;
-  margin-bottom: 10px;
 }
 
 .item-tech:hover .img-tech {
-  transform: scale(1.2);
-}
-
-.tech {
-  transition: transform 0.3s ease;
-  font-weight: bold;
-  font-size: 1.1rem;
+  transform: scale(1.3);
 }
 
 .item-tech:hover .tech {
-  transform: translateY(-4px);
-}
-
-.status-tech {
-  opacity: 0;
-  transition: opacity 0.3s ease;
-  font-size: 0.9rem;
-  text-align: center;
-  color: #facc15; /* giallo tailwind */
-  padding: 4px 8px;
-  line-height: 1.2;
+  transform: translateY(-12px);
 }
 
 .item-tech:hover .status-tech {
