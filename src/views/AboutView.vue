@@ -110,7 +110,7 @@ export default {
           id: 3,
           name: 'Creatività',
           imageUrl: 'https://cdn-icons-png.freepik.com/256/15557/15557915.png',
-          status: 'Contenuti multimediali'
+          status: 'Creator'
         }
       ]
     };
@@ -198,7 +198,7 @@ export default {
         </div>
 
         <div v-show="activeTab === 3">
-          <div class="grid grid-cols-1 gap-6 pb-32 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 2xl:gap-12">
+          <div class="grid grid-cols-1 gap-6 pb-32 justify-items-center sm:grid-cols-2 md:grid-cols-3 md:gap-10 xl:grid-cols-4 xl:gap-x-16 xl:gap-y-10 2xl:gap-x-20">
             <div v-for="item in education" :key="item.id">
               <div class="item-tech flex cursor-pointer items-center gap-2 rounded border border-amber-200 px-2 py-2 hover:bg-amber-200 hover:bg-opacity-10 md:gap-3 lg:px-3 min-w-[220px] md:min-w-[260px] xl:min-w-[300px]">
                 <div class="flex h-12 w-12 items-center justify-center p-0 lg:h-16 lg:w-16 lg:p-2 zoom-in">
