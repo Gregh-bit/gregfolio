@@ -14,13 +14,13 @@ export default {
           id: 2,
           name: 'CSS',
           imageUrl: 'https://cdn-icons-png.flaticon.com/512/732/732190.png',
-          status: 'Avanzato'
+          status: 'Principiante'
         },
         {
           id: 3,
           name: 'Javascript',
           imageUrl: 'https://cdn.icon-icons.com/icons2/2415/PNG/512/javascript_original_logo_icon_146455.png',
-          status: 'Avanzato'
+          status: 'Principiante'
         },
         {
           id: 4,
@@ -51,7 +51,7 @@ export default {
         {
           id: 2,
           name: 'Canva',
-          imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/0/08/Canva_icon_2021.svg',
+          imageUrl: 'https://cdn-1.webcatalog.io/catalog/canva-cn/canva-cn-icon-unplated.png?v=1748220584563',
           status: 'Design grafico'
         },
         {
@@ -63,28 +63,34 @@ export default {
         {
           id: 4,
           name: 'DaVinci Resolve',
-          imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/2/2f/DaVinci_Resolve_17_logo.svg',
+          imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/4/4d/DaVinci_Resolve_Studio.png',
           status: 'Montaggio video'
         },
         {
           id: 5,
           name: 'Microsoft Office',
-          imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/4/4e/Microsoft_Office_Logo_%282019%E2%80%93present%29.svg',
+          imageUrl: 'https://img.icons8.com/color/512/microsoft-office-2019.png',
           status: 'Suite produttività'
+        }
+        {
+          id: 6,
+          name: 'CapCut',
+          imageUrl: 'https://gpng.net/wp-content/uploads/Capcut-Logo-Transparent-PNG.png',
+          status: 'Montaggio video'
         }
       ],
       education: [
         {
           id: 1,
           name: 'Diploma Scientifico',
-          imageUrl: 'https://cdn-icons-png.flaticon.com/512/3135/3135768.png',
-          status: 'Liceo Galilei, Lamezia Terme (2019 – 2024)'
+          imageUrl: 'https://cdn-icons-png.flaticon.com/512/4466/4466436.png',
+          status: 'Liceo Galilei 2019 – 2024'
         },
         {
           id: 2,
           name: 'Laurea in Informatica',
-          imageUrl: 'https://cdn-icons-png.flaticon.com/512/2991/2991148.png',
-          status: 'UNICAL (2024 – in corso)'
+          imageUrl: 'https://cdn-icons-png.flaticon.com/512/8824/8824175.png',
+          status: 'UNICAL 2024 – in corso'
         }
       ],
       interests: [
@@ -92,19 +98,19 @@ export default {
           id: 1,
           name: 'Film e Musica',
           imageUrl: 'https://cdn-icons-png.flaticon.com/512/727/727245.png',
-          status: 'Cinema, colonne sonore, produzioni audio'
+          status: 'Cinema e Videomaking'
         },
         {
           id: 2,
           name: 'Tecnologia',
-          imageUrl: 'https://cdn-icons-png.flaticon.com/512/1048/1048953.png',
-          status: 'Hardware, software, innovazione digitale'
+          imageUrl: 'https://cdn-icons-png.flaticon.com/512/6985/6985378.png',
+          status: 'Hardware e Software'
         },
         {
           id: 3,
           name: 'Creatività',
-          imageUrl: 'https://cdn-icons-png.flaticon.com/512/1828/1828884.png',
-          status: 'Scrittura, comunicazione, contenuti multimediali'
+          imageUrl: 'https://cdn-icons-png.freepik.com/256/15557/15557915.png',
+          status: 'Scrittura, contenuti multimediali'
         }
       ]
     };
