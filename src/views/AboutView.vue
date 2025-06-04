@@ -77,6 +77,18 @@ export default {
           name: 'CapCut',
           imageUrl: 'https://gpng.net/wp-content/uploads/Capcut-Logo-Transparent-PNG.png',
           status: 'Montaggio video'
+        },
+        {
+          id: 7,
+          name: 'Shopify',
+          imageUrl: 'https://cdn.iconscout.com/icon/free/png-256/free-shopify-logo-icon-download-in-svg-png-gif-file-formats--online-shopping-brand-logos-pack-icons-226579.png?f=webp&w=256',
+          status: 'E-Commerce'
+        },
+        {
+          id: 8,
+          name: 'Wordpress',
+          imageUrl: 'https://static-00.iconduck.com/assets.00/wordpress-icon-2048x2048-nw66awj8.png',
+          status: 'Web Developer'
         }
       ],
       education: [
