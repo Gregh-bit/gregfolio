@@ -253,28 +253,52 @@ export default {
   animation-delay: 800ms;
 }
 
-.img-tech,
-.tech {
+.item-tech {
+  transition: transform 0.3s ease, height 0.3s ease, background-color 0.3s ease;
+  overflow: hidden;
+  height: 160px; /* altezza normale */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.item-tech:hover {
+  height: 220px; /* si espande */
+}
+
+.img-tech {
   transition: transform 0.3s ease;
+  width: 64px;
+  height: 64px;
+  margin-bottom: 10px;
 }
 
 .item-tech:hover .img-tech {
-  transform: scale(1.3);
+  transform: scale(1.2);
+}
+
+.tech {
+  transition: transform 0.3s ease;
+  font-weight: bold;
+  font-size: 1.1rem;
 }
 
 .item-tech:hover .tech {
-  transform: translateY(-12px);
+  transform: translateY(-4px);
+}
+
+.status-tech {
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  font-size: 0.9rem;
+  text-align: center;
+  color: #facc15; /* giallo tailwind */
+  padding: 4px 8px;
+  line-height: 1.2;
 }
 
 .item-tech:hover .status-tech {
   opacity: 1;
-  position: relative;
-  top: 4px;
-  white-space: normal;
-  word-break: break-word;
-  width: 100%;
-  display: block;
-  text-align: left;
-  padding-top: 4px;
 }
 </style>
