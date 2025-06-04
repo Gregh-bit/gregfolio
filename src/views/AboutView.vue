@@ -71,7 +71,7 @@ export default {
           name: 'Microsoft Office',
           imageUrl: 'https://img.icons8.com/color/512/microsoft-office-2019.png',
           status: 'Suite produttività'
-        }
+        },
         {
           id: 6,
           name: 'CapCut',
