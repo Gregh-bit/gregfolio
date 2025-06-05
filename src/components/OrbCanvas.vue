@@ -4,7 +4,7 @@
 
 <script setup>
 import { onMounted, ref } from 'vue'
-
+// eslint-disable-next-line no-undef
 const props = defineProps({
   hue: { type: Number, default: 0 },
   hoverIntensity: { type: Number, default: 0.5 },
