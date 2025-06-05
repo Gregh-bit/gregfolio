@@ -6,7 +6,7 @@
 import { Renderer, Program, Mesh, Triangle, Vec3 } from 'ogl'
 
 export default {
-  name: 'Orb',
+  name: 'OrbComponent',
   props: {
     hue: { type: Number, default: 0 },
     hoverIntensity: { type: Number, default: 0.2 },
