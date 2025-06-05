@@ -30,7 +30,7 @@
     </div>
 
     <!-- Orb Background Canvas -->
-    <Orb class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[360px] h-[360px] z-0" :hue="0.7" :hoverIntensity="0.4" />
+    <OrbComponent class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[360px] h-[360px] z-0" :hue="0.7" :hoverIntensity="0.4" />
   </main>
 </template>
 
@@ -39,7 +39,7 @@ import Orb from '@/components/Orb.vue'
 
 export default {
   name: 'HomeView',
-  components: { Orb },
+  components: { OrbComponent },
   data() {
     return {
       txt: '',
