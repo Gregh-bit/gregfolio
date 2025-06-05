@@ -4,6 +4,7 @@
 
 <script>
 import { Renderer, Program, Mesh, Triangle, Vec3 } from 'ogl'
+import { onBeforeUnmount } from 'vue'
 
 export default {
   name: 'OrbComponent',
@@ -167,9 +168,9 @@ export default {
 
       renderer.render({ scene: mesh })
     }
-    rafId = requestAnimationFrame(update)
+      rafId = requestAnimationFrame(update)
 
-    this.$once('hook:beforeDestroy', () => {
+    onBeforeUnmount(() => {
       cancelAnimationFrame(rafId)
       window.removeEventListener('resize', resize)
       container.removeEventListener('mousemove', handleMouseMove)
