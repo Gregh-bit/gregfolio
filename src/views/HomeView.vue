@@ -35,7 +35,7 @@
 </template>
 
 <script>
-import OrbComponent from '@/components/Orb.vue'
+import OrbComponent from '@/components/OrbCanvas.vue'
 
 export default {
   name: 'HomeView',
