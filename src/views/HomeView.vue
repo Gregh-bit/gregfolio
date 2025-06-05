@@ -75,7 +75,6 @@ export default {
   methods: {
     tick() {
       let typewriter = this.$refs.typewriter;
-
       if (!typewriter) return;
 
       let i = this.loopNum % this.toRotate.length;
