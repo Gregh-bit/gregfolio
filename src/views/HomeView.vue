@@ -21,6 +21,21 @@
   </main>
 </template>
 
+<template>
+  <div class="relative w-full h-[600px]">
+    <Orb :hue="0.7" :hoverIntensity="0.4" />
+  </div>
+</template>
+
+<script>
+import Orb from '@/components/Orb.vue'
+
+export default {
+  name: 'HomeView',
+  components: { Orb }
+}
+</script>
+
 <script>
 export default {
   name: 'HomeView',
