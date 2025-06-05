@@ -42,19 +42,6 @@ export default {
   components: { Orb },
   data() {
     return {
-      txt: 'Sviluppatore Frontend'
-    }
-  }
-}
-  
-<script>
-import Orb from '@/components/Orb.vue'
-
-export default {
-  name: 'HomeView',
-  components: { Orb },
-  data() {
-    return {
       txt: '',
       toRotate: [
         "Riparatore hardware/software",
