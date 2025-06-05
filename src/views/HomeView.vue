@@ -46,13 +46,16 @@ export default {
     }
   }
 }
-</script>
-
+  
 <script>
+import Orb from '@/components/Orb.vue'
+
 export default {
   name: 'HomeView',
+  components: { Orb },
   data() {
     return {
+      txt: '',
       toRotate: [
         "Riparatore hardware/software",
         "Graphic Designer",
@@ -60,7 +63,6 @@ export default {
         "Studente di Informatica"
       ],
       period: 2000,
-      txt: '',
       loopNum: 0,
       isDeleting: false,
     };
@@ -74,22 +76,19 @@ export default {
     tick() {
       let typewriter = this.$refs.typewriter;
 
-      if (!typewriter) {
-        return;
-      }
+      if (!typewriter) return;
 
       let i = this.loopNum % this.toRotate.length;
       let fullTxt = this.toRotate[i];
 
-      this.txt = this.isDeleting ? fullTxt.substring(0, this.txt.length - 1) : fullTxt.substring(0, this.txt.length + 1);
+      this.txt = this.isDeleting
+        ? fullTxt.substring(0, this.txt.length - 1)
+        : fullTxt.substring(0, this.txt.length + 1);
+
       typewriter.innerHTML = `<span class="wrap">${this.txt}</span>`;
 
-      let that = this;
       let delta = 200 - Math.random() * 100;
-
-      if (this.isDeleting) {
-        delta /= 2;
-      }
+      if (this.isDeleting) delta /= 2;
 
       if (!this.isDeleting && this.txt === fullTxt) {
         delta = this.period;
@@ -101,7 +100,7 @@ export default {
       }
 
       setTimeout(() => {
-        that.tick();
+        this.tick();
       }, delta);
     },
   }
