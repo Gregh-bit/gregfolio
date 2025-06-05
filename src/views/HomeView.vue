@@ -1,8 +1,7 @@
 <template>
   <main
-    class="relative mt-10 md:mt-1 flex flex-col-reverse gap-8 items-center md:flex-row md:gap-16 md:justify-center min-h-[65vh] md:min-h-[80vh]">
-    
-    <div class="space-y-2 text-center md:text-left px-10 z-10">
+    class="mt-10 md:mt-1 flex flex-col-reverse gap-8 items-center md:flex-row md:gap-16 md:justify-center min-h-[65vh] md:min-h-[80vh]">
+    <div class="space-y-2 text-center md:text-left px-10">
       <p class="text-amber-200">Ciao, sono</p>
       <h1 class="text-4xl font-bold md:text-5xl text-white fadein-up">Gregorio Cinque</h1>
       <div class="py-2">
@@ -15,34 +14,18 @@
       <p class="text-white pr-4 fade-in-from-left">Benvenuto nel mio sito personale. <span class="wave">👋🏼</span></p>
       <br>
     </div>
-
-    <div class="relative w-[300px] h-[300px] fadein-right z-10">
-      <canvas ref="orbCanvas" class="absolute inset-0 w-full h-full rounded-full overflow-hidden"></canvas>
-      <img
-        alt="avatar"
-        fetchpriority="high"
-        width="300"
-        height="300"
-        decoding="async"
-        class="w-full h-full object-cover rounded-full"
-        src="https://i1.sndcdn.com/avatars-000214125831-5q6tdw-t500x500.jpg"
-      />
+    <div class="flex justify-center md:justify-start fadein-right">
+      <img alt="avatar" fetchpriority="high" width="300" height="300" decoding="async" data-nimg="1"
+        class="w-10/12 md:h-auto rounded-full border-4 border-amber-200 pict" src="https://i1.sndcdn.com/avatars-000214125831-5q6tdw-t500x500.jpg">
     </div>
-
-    <!-- Orb Background Canvas -->
-    <OrbComponent class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[360px] h-[360px] z-0" :hue="0.7" :hoverIntensity="0.4" />
   </main>
 </template>
 
 <script>
-import OrbComponent from '@/components/OrbCanvas.vue'
-
 export default {
   name: 'HomeView',
-  components: { OrbComponent },
   data() {
     return {
-      txt: '',
       toRotate: [
         "Riparatore hardware/software",
         "Graphic Designer",
@@ -50,6 +33,7 @@ export default {
         "Studente di Informatica"
       ],
       period: 2000,
+      txt: '',
       loopNum: 0,
       isDeleting: false,
     };
@@ -62,19 +46,23 @@ export default {
   methods: {
     tick() {
       let typewriter = this.$refs.typewriter;
-      if (!typewriter) return;
+
+      if (!typewriter) {
+        return;
+      }
 
       let i = this.loopNum % this.toRotate.length;
       let fullTxt = this.toRotate[i];
 
-      this.txt = this.isDeleting
-        ? fullTxt.substring(0, this.txt.length - 1)
-        : fullTxt.substring(0, this.txt.length + 1);
-
+      this.txt = this.isDeleting ? fullTxt.substring(0, this.txt.length - 1) : fullTxt.substring(0, this.txt.length + 1);
       typewriter.innerHTML = `<span class="wrap">${this.txt}</span>`;
 
+      let that = this;
       let delta = 200 - Math.random() * 100;
-      if (this.isDeleting) delta /= 2;
+
+      if (this.isDeleting) {
+        delta /= 2;
+      }
 
       if (!this.isDeleting && this.txt === fullTxt) {
         delta = this.period;
@@ -86,7 +74,7 @@ export default {
       }
 
       setTimeout(() => {
-        this.tick();
+        that.tick();
       }, delta);
     },
   }
