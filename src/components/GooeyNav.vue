@@ -1,80 +1,91 @@
 <template>
-  <div class="relative w-full flex justify-center items-center py-6 gooey-container">
-    <div class="flex space-x-4 bg-yellow-300/10 px-6 py-2 rounded-full gooey-bg">
+  <div class="gooey-nav-container">
+    <nav class="gooey-nav">
       <button
         v-for="(tab, index) in tabs"
         :key="index"
-        @click="setActive(index)"
-        class="text-sm font-medium px-4 py-2 rounded-full transition-all duration-300"
-        :class="{
-          'bg-yellow-300 text-black shadow-md': activeTab === index,
-          'text-yellow-300 hover:text-yellow-200': activeTab !== index
-        }"
+        :class="{ active: modelValue === index }"
+        @click="emit('update:modelValue', index)"
       >
-        {{ tab.label }}
+        {{ tab }}
       </button>
-      <div class="gooey-ball" :style="ballStyle" />
-    </div>
+      <div class="gooey"></div>
+    </nav>
   </div>
 </template>
 
 <script setup>
-import { ref, computed } from 'vue'
-
 const props = defineProps({
   modelValue: Number
 })
+
 const emit = defineEmits(['update:modelValue'])
 
-const tabs = [
-  { label: 'Tech Stack' },
-  { label: 'Strumenti' },
-  { label: 'Istruzione' },
-  { label: 'Interessi' }
-]
-
-const activeTab = ref(props.modelValue || 0)
-
-function setActive(index) {
-  activeTab.value = index
-  emit('update:modelValue', index)
-}
-
-const ballStyle = computed(() => {
-  return {
-    transform: `translateX(${activeTab.value * 100}%)`
-  }
-})
+const tabs = ['Tech Stack', 'Strumenti', 'Istruzione', 'Interessi']
 </script>
 
 <style scoped>
-.gooey-container {
-  filter: url('#gooey-effect');
+.gooey-nav-container {
+  display: flex;
+  justify-content: center;
+  padding: 2rem;
 }
-.gooey-bg {
+
+.gooey-nav {
+  display: flex;
   position: relative;
+  background: #facc15; /* Giallo */
+  border-radius: 50px;
+  padding: 0.5rem;
+  filter: url('#goo');
 }
-.gooey-ball {
+
+.gooey-nav button {
+  background: white;
+  border: none;
+  padding: 0.75rem 1.25rem;
+  margin: 0 0.25rem;
+  border-radius: 50px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+.gooey-nav button.active {
+  background: #fbbf24; /* Giallo scuro */
+  color: white;
+}
+
+.gooey {
   position: absolute;
-  top: 0.25rem;
-  left: 0.25rem;
-  width: 90px;
-  height: 36px;
-  background-color: #facc15; /* amber-400 */
-  border-radius: 9999px;
-  z-index: -1;
-  transition: transform 0.3s ease;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+svg {
+  position: absolute;
+  width: 0;
+  height: 0;
 }
 </style>
 
-<svg width="0" height="0">
-  <filter id="gooey-effect">
-    <feGaussianBlur in="SourceGraphic" stdDeviation="6" result="blur" />
-    <feColorMatrix in="blur" mode="matrix"
-      values="1 0 0 0 0  
-              0 1 0 0 0  
-              0 0 1 0 0  
-              0 0 0 20 -10" result="gooey" />
-    <feComposite in="SourceGraphic" in2="gooey" operator="atop"/>
+<!-- Gooey filter -->
+<svg>
+  <filter id="goo">
+    <feGaussianBlur in="SourceGraphic" stdDeviation="10" result="blur" />
+    <feColorMatrix
+      in="blur"
+      mode="matrix"
+      values="
+        1 0 0 0 0
+        0 1 0 0 0
+        0 0 1 0 0
+        0 0 0 20 -10"
+      result="goo"
+    />
+    <feComposite in="SourceGraphic" in2="goo" operator="atop" />
   </filter>
 </svg>
