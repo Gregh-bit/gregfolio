@@ -1,5 +1,9 @@
+<script setup>
+import { Motion } from 'motion-v'
+</script>
+
 <script>
-import SmoothTabs from 'src/component/SmoothTabs.vue';
+import SmoothTabs from 'src/component/SmoothTabs.vue'
 
 export default {
   components: {
@@ -129,34 +133,46 @@ export default {
           status: 'Creator'
         }
       ]
-    };
+    }
   }
-};
+}
 </script>
 
 <template>
-  <div class="bg-[#1e1e1f] px-5 py-5 md:px-12 md:py-10 text-left border border-[#383838] rounded-3xl text-amber-50 mx-3 mb-5">
-    <article data-page="about">
-      <header>
-        <div class="text-2xl font-bold text-white mb-5 fadein-bot title-section flex items-center">
-          About Me &nbsp;
-          <div class="h-[1px] w-32 bg-amber-200 md:w-96 aos-init aos-animate" data-aos="zoom-in-left" data-aos-duration="600"></div>
-        </div>
-      </header>
+  <!-- Sezione Chi sono (Motion) -->
+  <Motion
+    :initial="{ opacity: 0, y: 50 }"
+    :enter="{ opacity: 1, y: 0 }"
+    transition="ease-in-out"
+    class="min-h-screen flex items-center justify-center py-10"
+  >
+    <div class="text-center max-w-4xl mx-auto px-4">
+      <h1 class="text-4xl md:text-5xl font-bold mb-6 text-white">Chi sono</h1>
+      <p class="text-gray-300 mb-6">
+        Sono uno studente appassionato di tecnologia, design e sviluppo web. Amo combinare creatività e logica per costruire progetti intuitivi ed efficienti.
+      </p>
 
-      <section class="text-sm md:text-lg text-justify flex flex-col gap-4 md:flex-row md:gap-8 md:justify-left md:items-center">
-        <div class="flex justify-center">
-          <img class="w-9/12 rounded-full mb-3 fadein-up" src="https://i1.sndcdn.com/avatars-000214125831-5q6tdw-t500x500.jpg" alt="Foto">
+      <div class="grid md:grid-cols-2 gap-8 text-left text-gray-200">
+        <div>
+          <h2 class="text-xl font-semibold mb-2 text-white">🎓 Istruzione</h2>
+          <ul class="list-disc list-inside text-gray-300">
+            <li>Diploma di scuola superiore</li>
+            <li>Studi universitari in corso</li>
+          </ul>
         </div>
-        <div class="md:w-7/12">
-          <p class="mb-3 md:mb-7 fadein-left fadeins-1">
-            &nbsp; &nbsp; &nbsp; Sono uno studente estroverso e creativo, appassionato di informatica, film e musica. Amo esprimermi attraverso la tecnologia e le arti digitali. Mi piace cucinare e apprendere cose nuove ogni giorno.
-          </p>
+        <div>
+          <h2 class="text-xl font-semibold mb-2 text-white">🎯 Interessi</h2>
+          <ul class="list-disc list-inside text-gray-300">
+            <li>Sviluppo front-end</li>
+            <li>UI/UX design</li>
+            <li>Montaggio video e creatività digitale</li>
+          </ul>
         </div>
-      </section>
-    </article>
-  </div>
+      </div>
+    </div>
+  </Motion>
 
+  <!-- Sezione Competenze e Interessi -->
   <div class="px-5 py-5 md:px-12 md:py-10 text-left text-amber-50 mx-3">
     <article data-page="about">
       <header>
@@ -165,7 +181,6 @@ export default {
           &nbsp; Competenze e Interessi
         </div>
       </header>
-
       <SmoothTabs :tech="tech" :tools="tools" :education="education" :interests="interests" />
     </article>
   </div>
