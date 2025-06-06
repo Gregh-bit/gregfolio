@@ -3,7 +3,7 @@ import { Motion } from 'motion-v'
 </script>
 
 <script>
-import SmoothTabs from 'src/components/SmoothTabs.vue'
+import SmoothTabs from '../components/SmoothTabs.vue'
 
 export default {
   components: {
