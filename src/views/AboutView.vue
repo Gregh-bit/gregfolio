@@ -1,5 +1,5 @@
 <script>
-import SmoothTabs from './SmoothTabs.vue';
+import SmoothTabs from 'src/component/SmoothTabs.vue';
 
 export default {
   components: {
