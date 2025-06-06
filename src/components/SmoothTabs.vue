@@ -28,6 +28,7 @@
 </template>
 
 <script setup>
+import { watch } from 'vue'
 import { ref, onMounted, nextTick } from 'vue'
 import { motion } from 'motion-v'
 
