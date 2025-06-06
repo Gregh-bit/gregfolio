@@ -1,5 +1,4 @@
 <script>
-  import GooeyNav from '@/components/GooeyNav.vue'
 export default {
   data() {
     return {
@@ -163,7 +162,20 @@ export default {
         </div>
       </header>
       <section>
-        <GooeyNav v-model="activeTab" />
+        <ul class="flex flex-wrap text-sm font-medium text-center text-gray-500 dark:text-gray-400 mb-5">
+          <li class="mr-2">
+            <button class="inline-block px-4 py-3 rounded-lg hover:text-white" :class="{ 'text-amber-200 bg-amber-200 bg-opacity-10': activeTab === 1 }" @click="activeTab = 1">Tech Stack</button>
+          </li>
+          <li class="mr-2">
+            <button class="inline-block px-4 py-3 rounded-lg hover:text-white" :class="{ 'text-amber-200 bg-amber-200 bg-opacity-10': activeTab === 2 }" @click="activeTab = 2">Strumenti</button>
+          </li>
+          <li class="mr-2">
+            <button class="inline-block px-4 py-3 rounded-lg hover:text-white" :class="{ 'text-amber-200 bg-amber-200 bg-opacity-10': activeTab === 3 }" @click="activeTab = 3">Istruzione</button>
+          </li>
+          <li class="mr-2">
+            <button class="inline-block px-4 py-3 rounded-lg hover:text-white" :class="{ 'text-amber-200 bg-amber-200 bg-opacity-10': activeTab === 4 }" @click="activeTab = 4">Interessi</button>
+          </li>
+        </ul>
 
         <div v-show="activeTab === 1">
           <div class="grid grid-cols-2 gap-4 pb-32 md:grid-cols-3 md:gap-8 xl:grid-cols-4 xl:gap-10 2xl:gap-12">
