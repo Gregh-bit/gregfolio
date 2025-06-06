@@ -1,8 +1,12 @@
 <script>
+import SmoothTabs from './SmoothTabs.vue';
+
 export default {
+  components: {
+    SmoothTabs
+  },
   data() {
     return {
-      activeTab: 1,
       tech: [
         {
           id: 1,
@@ -127,7 +131,7 @@ export default {
       ]
     };
   }
-}
+};
 </script>
 
 <template>
@@ -161,87 +165,8 @@ export default {
           &nbsp; Competenze e Interessi
         </div>
       </header>
-      <section>
-        <ul class="flex flex-wrap text-sm font-medium text-center text-gray-500 dark:text-gray-400 mb-5">
-          <li class="mr-2">
-            <button class="inline-block px-4 py-3 rounded-lg hover:text-white" :class="{ 'text-amber-200 bg-amber-200 bg-opacity-10': activeTab === 1 }" @click="activeTab = 1">Tech Stack</button>
-          </li>
-          <li class="mr-2">
-            <button class="inline-block px-4 py-3 rounded-lg hover:text-white" :class="{ 'text-amber-200 bg-amber-200 bg-opacity-10': activeTab === 2 }" @click="activeTab = 2">Strumenti</button>
-          </li>
-          <li class="mr-2">
-            <button class="inline-block px-4 py-3 rounded-lg hover:text-white" :class="{ 'text-amber-200 bg-amber-200 bg-opacity-10': activeTab === 3 }" @click="activeTab = 3">Istruzione</button>
-          </li>
-          <li class="mr-2">
-            <button class="inline-block px-4 py-3 rounded-lg hover:text-white" :class="{ 'text-amber-200 bg-amber-200 bg-opacity-10': activeTab === 4 }" @click="activeTab = 4">Interessi</button>
-          </li>
-        </ul>
 
-        <div v-show="activeTab === 1">
-          <div class="grid grid-cols-2 gap-4 pb-32 md:grid-cols-3 md:gap-8 xl:grid-cols-4 xl:gap-10 2xl:gap-12">
-            <div v-for="item in tech" :key="item.id">
-              <div class="item-tech flex cursor-pointer items-center gap-2 rounded border border-amber-200 px-2 py-2 hover:bg-amber-200 hover:bg-opacity-10 md:gap-3 lg:px-3">
-                <div class="flex h-12 w-12 items-center justify-center p-0 lg:h-16 lg:w-16 lg:p-2 zoom-in">
-                  <img :src="item.imageUrl" class="img-tech drop-shadow-xl transition-all duration-300 h-[65%] w-[65%] lg:h-[85%] lg:w-[85%]" />
-                </div>
-                <div class="flex items-center text-sm md:text-base lg:text-lg">
-                  <div class="tech font-medium text-secondary transition-all duration-300 translate-y-0 ">{{ item.name }}</div>
-                  <div class="status-tech opacity-0 absolute mt-5 text-[10px] text-amber-200 transition-all duration-300 md:text-xs lg:text-sm">{{ item.status }}</div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div v-show="activeTab === 2">
-          <div class="grid grid-cols-2 gap-4 pb-32 md:grid-cols-3 md:gap-8 xl:grid-cols-4 xl:gap-10 2xl:gap-12">
-            <div v-for="item in tools" :key="item.id">
-              <div class="item-tech flex cursor-pointer items-center gap-2 rounded border border-amber-200 px-2 py-2 hover:bg-amber-200 hover:bg-opacity-10 md:gap-3 lg:px-3">
-                <div class="flex h-12 w-12 items-center justify-center p-0 lg:h-16 lg:w-16 lg:p-2 zoom-in">
-                  <img :src="item.imageUrl" class="img-tech drop-shadow-xl transition-all duration-300 h-[65%] w-[65%] lg:h-[85%] lg:w-[85%]" />
-                </div>
-                <div class="flex items-center text-sm md:text-base lg:text-lg">
-                  <div class="tech font-medium text-secondary transition-all duration-300 translate-y-0 ">{{ item.name }}</div>
-                  <div class="status-tech opacity-0 absolute mt-5 text-[10px] text-amber-200 transition-all duration-300 md:text-xs lg:text-sm">{{ item.status }}</div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div v-show="activeTab === 3">
-          <div class="grid grid-cols-1 gap-6 pb-32 justify-items-center sm:grid-cols-2 md:grid-cols-3 md:gap-10 xl:grid-cols-4 xl:gap-x-20 xl:gap-y-10 2xl:gap-x-20">
-            <div v-for="item in education" :key="item.id">
-              <div class="item-tech flex cursor-pointer items-center gap-2 rounded border border-amber-200 px-2 py-2 hover:bg-amber-200 hover:bg-opacity-10 md:gap-3 lg:px-3 min-w-[220px] md:min-w-[260px] xl:min-w-[300px]">
-                <div class="flex h-12 w-12 items-center justify-center p-0 lg:h-16 lg:w-16 lg:p-2 zoom-in">
-                  <img :src="item.imageUrl" class="img-tech drop-shadow-xl transition-all duration-300 h-[65%] w-[65%] lg:h-[85%] lg:w-[85%]" />
-                </div>
-                <div class="flex items-center text-sm md:text-base lg:text-lg">
-                  <div class="tech font-medium text-secondary transition-all duration-300 translate-y-0 ">{{ item.name }}</div>
-                  <div class="status-tech opacity-0 absolute mt-5 text-[10px] text-amber-200 transition-all duration-300 md:text-xs lg:text-sm">{{ item.status }}</div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div v-show="activeTab === 4">
-          <div class="grid grid-cols-1 gap-4 pb-32 md:grid-cols-3 md:gap-8 xl:grid-cols-4 xl:gap-10 2xl:gap-12">
-            <div v-for="item in interests" :key="item.id">
-              <div class="item-tech flex cursor-pointer items-center gap-2 rounded border border-amber-200 px-2 py-2 hover:bg-amber-200 hover:bg-opacity-10 md:gap-3 lg:px-3">
-                <div class="flex h-12 w-12 items-center justify-center p-0 lg:h-16 lg:w-16 lg:p-2 zoom-in">
-                  <img :src="item.imageUrl" class="img-tech drop-shadow-xl transition-all duration-300 h-[65%] w-[65%] lg:h-[85%] lg:w-[85%]" />
-                </div>
-                <div class="flex items-center text-sm md:text-base lg:text-lg">
-                  <div class="tech font-medium text-secondary transition-all duration-300 translate-y-0 ">{{ item.name }}</div>
-                  <div class="status-tech opacity-0 absolute mt-5 text-[10px] text-amber-200 transition-all duration-300 md:text-xs lg:text-sm">{{ item.status }}</div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-      </section>
+      <SmoothTabs :tech="tech" :tools="tools" :education="education" :interests="interests" />
     </article>
   </div>
 </template>
@@ -251,7 +176,6 @@ export default {
   opacity: 0;
   animation: fadeInLeft 0.5s ease-out forwards;
 }
-
 @keyframes fadeInLeft {
   0% {
     opacity: 0;
@@ -262,28 +186,19 @@ export default {
     transform: translateX(0);
   }
 }
-
 .fadeins-1 {
   animation-delay: 500ms;
 }
-
-.fadeins-2 {
-  animation-delay: 800ms;
-}
-
 .img-tech,
 .tech {
   transition: transform 0.3s ease;
 }
-
 .item-tech:hover .img-tech {
   transform: scale(1.3);
 }
-
 .item-tech:hover .tech {
   transform: translateY(-12px);
 }
-
 .item-tech:hover .status-tech {
   opacity: 1;
 }
